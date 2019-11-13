@@ -11,10 +11,11 @@ val server: Server by lazy {
     Server {
         before {
             response.setHeader("Date", httpDate())
-            get("/hello/{name}") { ok("Hello, ${pathParameters["name"]}!", "text/plain") }
-            get("/") { ok("Hello!", "text/plain") }
-
         }
+
+        get("/hello/{name}") { ok("Hello, ${pathParameters["name"]}!", "text/plain") }
+        get("/") { ok("Hello!", "text/plain") }
+
     }
 }
 
